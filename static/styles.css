@@ -1,7 +1,14 @@
 body {
-    color: #566787;
-    background-image: url(imagen.webp);
+    color: #ffffff;
+    background-image: url(imagen.jpg);
+    background-position-x: center;
     font-family: 'Roboto', sans-serif;
+}
+
+.background
+{
+    background-image: url(imagen.jpg);
+
 }
 
 .table-responsive {
