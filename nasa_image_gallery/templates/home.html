@@ -6,7 +6,7 @@
         <form class="d-flex" action="{% url 'buscar' %}" method="POST">
             {% csrf_token %}
             <input class="form-control me-2" type="search" name="query" placeholder="Ingrese su búsqueda" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit"style="color: blueviolet;">Buscar</button>
+            <button class="btn btn-outline-success" type="submit"style="color: blueviolet; border-color: rebeccapurple;">Buscar</button>
         </form>
     </div>
     <div class="background">
@@ -31,8 +31,8 @@
                         <input type="hidden" name="description" value="{{ imagen.description }}">
                         <input type="hidden" name="image_url" value="{{ imagen.image_url }}">
                         <input type="hidden" name="date" value="{{ imagen.date }}"> {% if imagen in favourite_list %}
-                        <button type="submit" class="btn btn-primary btn-sm float-left" style="color:white" disabled>✔️ Ya está añadida a favoritos</button> {% else %}
-                        <button type="submit" class="btn btn-primary btn-sm float-left" style="color:white">❤️ Añadir a favoritos</button> {% endif %}
+                        <button type="submit" class="btn btn-primary btn-sm float-left" style="color:white; background-color: black;" disabled>✔️ Ya está añadida a favoritos</button> {% else %}
+                        <button type="submit" class="btn btn-primary btn-sm float-left" style="color:white; background-color: black;">💜 Añadir a favoritos</button> {% endif %}
                     </form>
                 </div>
             

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary" style="display: flex; background-color: rgba(118, 16, 158, 0.712);">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary text-lg-start fixed-top" style="display: flex; background-color: rgba(118, 16, 158, 0.712); position: -webkit-sticky; position: sticky; top: 0%;">
         <div class="logo">
             <img src="{% static 'ungs_logo.png' %}" alt="logo" style="width: 10cm; margin-left: 20px; height: auto;">
         </div>
@@ -35,8 +35,13 @@
                     {% endif %}
                     <li class="nav-item">
                         {% if request.user.is_authenticated %}
-                        <a class="nav-link" href="#" style="color: white;"><strong>Salir</strong></a> {% else %}
-                        <a class="nav-link" href="#" style="color: white;"><strong>Iniciar sesión</strong></a> {% endif %}
+                        <form action="{% url 'exit' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="nav-link" style="background-color: transparent; color: white; border: none;"><strong>Salir</strong></button>
+                        </form>
+                        {% else %}
+                        <a class="nav-link" href="{% url 'login' %}" style="color: white;"><strong>Iniciar sesión</strong></a>
+                        {% endif %}
                     </li>
                 </ul>
 
