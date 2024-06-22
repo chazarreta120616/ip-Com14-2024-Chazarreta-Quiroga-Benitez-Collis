@@ -5,6 +5,7 @@ from django.shortcuts import redirect, render
 from .layers.services import services_nasa_image_gallery
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
+from .google_translate import translate_text
 
 # función que invoca al template del índice de la aplicación.
 def index_page(request):
@@ -31,7 +32,10 @@ def search(request):
     search_msg = request.POST.get("query", "")
 
     if search_msg != "":
-        images_filtered = services_nasa_image_gallery.getImagesBySearchInputLike(search_msg)
+        # Traduce la palabra al inglés si es necesario
+        translated_search_msg = translate_text(search_msg, 'en')
+        # Busca imágenes usando la palabra traducida
+        images_filtered = services_nasa_image_gallery.getImagesBySearchInputLike(translated_search_msg)
         return render(request, "home.html", {"images": images_filtered, "favourite_list": favourite_list})
     else:
         return redirect("home")
