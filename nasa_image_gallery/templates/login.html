@@ -2,15 +2,15 @@
 <div class="login-form" style="text-align: center;">
     <form action="{% url 'login' %}" method="POST" style="display: inline-block;">
         {% csrf_token %}
-        <h2 class="text-center">Inicio de sesión</h2>
+        <h2 class="text-center" style="color:white; background-color:  rgba(118, 16, 158, 0.712); border-color:  rgba(118, 16, 158, 0.712); border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px; padding: 15px; max-width: fit-content; margin: auto;">Inicio de sesión</h2>
         <div class="form-group" style="margin-bottom: 5%;">
-            <input type="text" name="username" id="username" class="form-control" placeholder="Usuario" required="required">
+            <input type="text" name="username" id="username" class="form-control" placeholder="Usuario" required="required" style="color:white; background-color: transparent; border-color:  rgba(118, 16, 158, 0.712)">
         </div>
         <div class="form-group" style="margin-bottom: 5%;">
-            <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" required="required">
+            <input type="password" name="password" id="password" class="form-control" placeholder="Contraseña" required="required" style="color:white; background-color: transparent; border-color:  rgba(118, 16, 158, 0.712)">
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+            <button type="submit" class="btn btn-primary btn-block" style="color: white; background-color:  rgba(118, 16, 158, 0.712); border-color:  rgba(118, 16, 158, 0.712)">Ingresar</button>
         </div>
     </form>
 </div>
